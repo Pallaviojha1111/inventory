@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height,initial-scale=1.0">
+    <title>Add Item</title>
+    <h2>Add items to  inventory</h2>
+</head>
+<body>
+  <form (ngSubmit)="addItem()" #productForm="ngForm">
+    <label>Name:</label>
+    <input [(ngModel)]="item.itemName" name="itemName" required>
+    
+    <label>Description:</label>
+    <input [(ngModel)]="item.itemDescription" name="itemDescription" required>
+    
+    <label>Price:</label>
+    <input [(ngModel)]="item.price" name="price" required>
+    <label>Quantity:</label>
+    <input [(ngModel)]="item.price" name="quantity" required>
+    
+    <label for="category">Category:</label>
+    <select [(ngModel)]="item.category" name="category" required>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+   
+    
+   <button type="submit">Add Item</button>
+
+   
+    <button routerLink="/view-item" style="float: right;">View Item</button>
+
+  </form>
+</body>
+</html>

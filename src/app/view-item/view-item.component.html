@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ <title>Item List</title>
+</head>
+<body>
+ <div class="container">
+    <h2 class="text-center mt-5 mb-4">List Of Item</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <!-- <th scope="col">Category</th> -->
+       <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.itemName }}</td>
+          <td>{{ item.itemDescription }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <!-- <td *ngIf="item.category">{{ item.category }}</td> -->
+          <td>
+            <button (click)="editItem(item)">Edit</button>
+            <button (click)="deleteItem(item)">Delete</button>
+          </td>
+         
+        </tr>
+      </tbody>
+    </table>
+ </div>
+</body>
+</html>
